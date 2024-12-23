@@ -1,0 +1,42 @@
+<div class="product-list">
+  <h1>Product List</h1>
+
+  <!-- Show message if product list is empty -->
+  <div class="no-product" *ngIf="!productList || productList.length === 0; else productTable">
+    <p class="message-p">No products available. Add a product now!</p>
+    <button class="add-product-btn" routerLink="/seller-add-product">Add Product</button>
+  </div>
+
+  <!-- Product Table (only shows if products exist) -->
+  <ng-template #productTable>
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Color</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productList">
+          <td><img src="{{ item.image }}" alt=""/></td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.color }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.description }}</td>
+          <td>
+            <a class="adjust-update-link" routerLink="/seller-update-product/{{item.id}}"> 
+              <fa-icon [icon]="iconEdit"></fa-icon>
+            </a>
+            <fa-icon class="delete" (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+</div>

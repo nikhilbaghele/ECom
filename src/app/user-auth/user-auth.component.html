@@ -1,0 +1,101 @@
+<div class="user-auth">
+  <div *ngIf="!showLogin" class="sign-up">
+    <h1>User Signup</h1>
+    <form #userSignUp="ngForm" class="common-form" (ngSubmit)="signUp(userSignUp.value)" novalidate>
+      <!-- Name Input -->
+      <input
+        type="text"
+        class="form-input"
+        name="name"
+        placeholder="Name"
+        ngModel
+        #name="ngModel"
+        required
+        minlength="3"
+      />
+      <p class="invalid-input" *ngIf="name.invalid && name.touched">
+        <span *ngIf="name.errors?.['required']">Name is required.</span>
+        <span *ngIf="name.errors?.['minlength']">Name must be at least 3 characters.</span>
+      </p>
+
+      <!-- Email Input -->
+      <input
+        type="email"
+        class="form-input"
+        name="email"
+        placeholder="Email"
+        ngModel
+        #email="ngModel"
+        required
+      />
+      <p class="invalid-input" *ngIf="email.invalid && email.touched">
+        <span *ngIf="email.errors?.['required']">Email is required.</span>
+        <span *ngIf="email.errors?.['email']">Please enter a valid email.</span>
+      </p>
+
+      <!-- Password Input -->
+      <input
+        type="password"
+        class="form-input"
+        name="password"
+        placeholder="Password"
+        ngModel
+        #password="ngModel"
+        required
+        minlength="6"
+        maxlength="20"
+      />
+      <p class="invalid-input" *ngIf="password.invalid && password.touched">
+        <span *ngIf="password.errors?.['required']">Password is required.</span>
+        <span *ngIf="password.errors?.['minlength']">Password must be at least 6 characters.</span>
+        <span *ngIf="password.errors?.['maxlength']">Password must be no more than 20 characters.</span>
+      </p>
+
+      <button [disabled]="userSignUp.invalid" class="form-button">Sign Up</button>
+      <p class="toggle">Already Have Account? <a (click)="openLogin()">Click for login</a></p>
+    </form>
+  </div>
+
+  <div *ngIf="showLogin" class="login">
+    <h1>User Login</h1>
+    <form #userLogin="ngForm" class="common-form" (ngSubmit)="login(userLogin.value)" novalidate>
+      <p class="error-p">{{authError}}</p>
+
+      <!-- Email Input -->
+      <input
+        type="email"
+        class="form-input"
+        name="email"
+        placeholder="Email"
+        ngModel
+        #email="ngModel"
+        required
+      />
+      <p class="invalid-input" *ngIf="email.invalid && email.touched">
+        <span *ngIf="email.errors?.['required']">Email is required.</span>
+        <span *ngIf="email.errors?.['email']">Please enter a valid email.</span>
+      </p>
+
+      <!-- Password Input -->
+      <input
+        type="password"
+        class="form-input"
+        name="password"
+        placeholder="Password"
+        ngModel
+        #password="ngModel"
+        required
+        minlength="6"
+        maxlength="20"
+      />
+      <p class="invalid-input" *ngIf="password.invalid && password.touched">
+        <span *ngIf="password.errors?.['required']">Password is required.</span>
+        <span *ngIf="password.errors?.['minlength']">Password must be at least 6 characters.</span>
+        <span *ngIf="password.errors?.['maxlength']">Password must be no more than 20 characters.</span>
+      </p>
+
+      <button [disabled]="userLogin.invalid" class="form-button">Login</button>
+      <p class="toggle">Don't have account? <a (click)="openSignUp()">Click for signup</a></p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.update-product {
+    text-align: center;
+}
+
+h1 {
+    color: #3496ff;
+}
+
+.invalid-input {
+    color: #d9534f;
+    /* Red for errors */
+    font-size: 0.9rem;
+    margin-top: 5px;
+}

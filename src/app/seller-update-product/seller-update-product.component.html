@@ -1,0 +1,104 @@
+<div class="update-product">
+  <h1>Update Product</h1>
+  <p class="message-p">{{ productMessage }}</p>
+  <form
+    #updateProductForm="ngForm"
+    (ngSubmit)="submit(updateProductForm.value)"
+    class="common-form"
+  >
+    <!-- Product Name -->
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Name"
+      name="name"
+      [ngModel]="productData?.name"
+      required
+      minlength="3"
+      #name="ngModel"
+    />
+    <p class="invalid-input" *ngIf="name.invalid && name.touched">
+      Product name is required and should be at least 3 characters long.
+    </p>
+
+    <!-- Product Price -->
+    <input
+      type="number"
+      class="form-input"
+      placeholder="Enter Product Price"
+      name="price"
+      [ngModel]="productData?.price"
+      required
+      min="1"
+      #price="ngModel"
+    />
+    <p class="invalid-input" *ngIf="price.invalid && price.touched">
+      Price is required and must be a positive number.
+    </p>
+
+    <!-- Product Category -->
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Category"
+      name="category"
+      [ngModel]="productData?.category"
+      required
+      #category="ngModel"
+    />
+    <p class="invalid-input" *ngIf="category.invalid && category.touched">
+      Category is required.
+    </p>
+
+    <!-- Product Color -->
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Product Color"
+      name="color"
+      [ngModel]="productData?.color"
+      required
+      #color="ngModel"
+    />
+    <p class="invalid-input" *ngIf="color.invalid && color.touched">
+      Color is required.
+    </p>
+
+    <!-- Product Description -->
+    <textarea
+      class="form-input"
+      placeholder="Enter Product Description"
+      name="description"
+      [ngModel]="productData?.description"
+      required
+      minlength="10"
+      #description="ngModel"
+    ></textarea>
+    <p class="invalid-input" *ngIf="description.invalid && description.touched">
+      Description is required and should be at least 10 characters long.
+    </p>
+
+    <!-- Product Image -->
+    <input
+      type="url"
+      class="form-input"
+      placeholder="Enter Product Image URL"
+      name="image"
+      [ngModel]="productData?.image"
+      required
+      #image="ngModel"
+    />
+    <p class="invalid-input" *ngIf="image.invalid && image.touched">
+      Image URL is required and must be a valid URL.
+    </p>
+
+    <!-- Submit Button -->
+    <button
+      class="form-button"
+      type="submit"
+      [disabled]="updateProductForm.invalid"
+    >
+      Update Product
+    </button>
+  </form>
+</div>

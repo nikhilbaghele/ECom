@@ -1,0 +1,96 @@
+.my-orders {
+    margin-bottom: 100px;
+    font-family: Arial, sans-serif;
+}
+
+.my-orders h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+}
+
+.my-orders .order-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.my-orders .row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.my-orders .row span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+}
+
+.my-orders .row .col-sm-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-orders .form-button {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.my-orders .form-button:hover {
+    background-color: #d32f2f;
+}
+
+.my-orders p {
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.my-orders .no-orders {
+    font-size: 20px;
+    color: #777;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .my-orders .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .my-orders .row span {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .my-orders .row .col-sm-2 {
+        margin-bottom: 15px;
+    }
+
+    .my-orders .order-img {
+        margin-bottom: 10px;
+    }
+
+    .my-orders .form-button {
+        width: 100%;
+    }
+}

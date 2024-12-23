@@ -1,0 +1,49 @@
+<!-- Carousel for Popular Products -->
+<div *ngIf="popularProducts && popularProducts.length; else noProductsMessage">
+
+  <ng-container>
+    <ngb-carousel>
+      <ng-template *ngFor="let item of popularProducts" ngbSlide>
+        <div class="picsum-img-wrapper">
+          <a routerLink="/details/{{item.id}}">
+            <img class="product-header-image" src="{{item.image}}" alt="Product Image">
+          </a>
+        </div>
+        <div class="carousel-caption">
+          <h3>{{item.name}}</h3>
+          <p>{{item.description}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </ng-container>
+
+  <!-- Trendy Products Section -->
+  <div class="product-list-wrapper">
+    <h1>Trendy Products</h1>
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let item of trendyProducts">
+        <div class="product-item" (click)="redirectToDetails(item.id)">
+          <img src="{{item.image}}" alt="Product Image">
+          <div class="product-details">
+            <h6 class="name-head">{{item.name}}</h6>
+            <div class="product-price">
+              <h6>Price: {{item.price | currency:'INR':true}}</h6>
+            </div>
+            <div class="product-color">
+              <h6>Color: {{item.color}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fallback Message for No Products -->
+  
+</div>
+<ng-template #noProductsMessage>
+  <div class="no-products-message">
+    <h2>No products available at the moment.</h2>
+    <p>Please check back later.</p>
+  </div>
+</ng-template>

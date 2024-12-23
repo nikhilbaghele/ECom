@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+}
+.container {
+  padding: 20px;
+}
+.common-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+}
+.form-input {
+  height: 35px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(162, 201, 252);
+  padding-left: 15px;
+}
+.form-button {
+  min-height: 35px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.form-button:hover{
+  background-color: #0056b3;
+}
+.error-p{
+  color: rgb(255, 69, 69);
+  text-align: center;
+}
+
+.message-p{
+  color: rgb(36, 215, 36);
+  text-align: center;
+}
+
+.carousel-caption {
+  background-color: #0000007d;
+  border-radius: 10px;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  background-color: black;
+  border-radius: 5px;
+}
+
+.invalid-input{
+  color: red;
+  font-size: 12px;
+  margin-top:-20px
+}
+button:disabled{
+  cursor: not-allowed;
+}
+.max-width{
+  width: 100%;
+}
+

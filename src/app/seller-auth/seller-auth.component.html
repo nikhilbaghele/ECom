@@ -1,0 +1,89 @@
+<div class="seller-auth">
+  <div *ngIf="showLogin" class="sign-up">
+    <h1>Seller Signup</h1>
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form" novalidate>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Name"
+        name="name"
+        ngModel
+        required
+        minlength="3"
+      />
+      <div *ngIf="sellerSignUp.submitted && sellerSignUp.controls['name']?.invalid" class="error-message">
+        <p *ngIf="sellerSignUp.controls['name']?.errors?.['required']">Name is required.</p>
+        <p *ngIf="sellerSignUp.controls['name']?.errors?.['minlength']">Name must be at least 3 characters.</p>
+      </div>
+
+      <input
+        type="email"
+        class="form-input"
+        placeholder="Email"
+        name="email"
+        ngModel
+        required
+        email
+      />
+      <div *ngIf="sellerSignUp.submitted && sellerSignUp.controls['email']?.invalid" class="error-message">
+        <p *ngIf="sellerSignUp.controls['email']?.errors?.['required']">Email is required.</p>
+        <p *ngIf="sellerSignUp.controls['email']?.errors?.['email']">Enter a valid email.</p>
+      </div>
+
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Password"
+        name="password"
+        ngModel
+        required
+        minlength="6"
+      />
+      <div *ngIf="sellerSignUp.submitted && sellerSignUp.controls['password']?.invalid" class="error-message">
+        <p *ngIf="sellerSignUp.controls['password']?.errors?.['required']">Password is required.</p>
+        <p *ngIf="sellerSignUp.controls['password']?.errors?.['minlength']">Password must be at least 6 characters.</p>
+      </div>
+
+
+      <button [disabled]="sellerSignUp.invalid" class="form-button">Sign Up</button>
+      <p class="toggle">Already have account?<a (click)="openLogin()"> Click for login</a></p>
+    </form>
+  </div>
+
+  <div *ngIf="!showLogin" class="login">
+    <h1>Seller Login</h1>
+    <p class="error-p">{{authError}}</p>
+    <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="common-form" novalidate>
+      <input
+        type="email"
+        class="form-input"
+        placeholder="Email"
+        name="email"
+        ngModel
+        required
+        email
+      />
+      <div *ngIf="sellerLogin.submitted && sellerLogin.controls['email']?.invalid" class="error-message">
+        <p *ngIf="sellerLogin.controls['email']?.errors?.['required']">Email is required.</p>
+        <p *ngIf="sellerLogin.controls['email']?.errors?.['email']">Enter a valid email.</p>
+      </div>
+
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Password"
+        name="password"
+        ngModel
+        required
+        minlength="6"
+      />
+      <div *ngIf="sellerLogin.submitted && sellerLogin.controls['password']?.invalid" class="error-message">
+        <p *ngIf="sellerLogin.controls['password']?.errors?.['required']">Password is required.</p>
+        <p *ngIf="sellerLogin.controls['password']?.errors?.['minlength']">Password must be at least 6 characters.</p>
+      </div>
+
+      <button [disabled]="sellerLogin.invalid" class="form-button">Login</button>
+      <p class="toggle">Don't have account?<a (click)="openSignUp()"> Click for signup</a></p>
+    </form>
+  </div>
+</div>

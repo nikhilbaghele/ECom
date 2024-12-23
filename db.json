@@ -1,0 +1,71 @@
+{
+  "seller": [
+    {
+      "name": "Nikhil",
+      "email": "nikhil@gmail.com",
+      "password": "123456",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "name": "Nikhil",
+      "email": "nikhil@gmail.com",
+      "password": "nikhil",
+      "id": 1
+    }
+  ],
+  "products": [
+    {
+      "name": "Iphone 13",
+      "price": 49999,
+      "category": "Mobile Phone",
+      "color": "white",
+      "description": "Cinematic mode adds shallow depth of field and shifts focus automatically in your videos",
+      "image": "https://m.media-amazon.com/images/I/71GLMJ7TQiL._SX679_.jpg",
+      "id": 1
+    },
+    {
+      "name": "Iphone 14",
+      "price": 65999,
+      "category": "Mobile Phone",
+      "color": "Pink",
+      "description": "DYNAMIC ISLAND COMES TO IPHONE 15 — Dynamic Island bubbles up alerts and Live Activities — so you don’t miss them while you’re doing something else. You can see who’s calling, track your next ride, check your flight status, and so much more.",
+      "image": "https://m.media-amazon.com/images/I/31vz6yNQ6+L._SX342_SY445_.jpg",
+      "id": 2
+    },
+    {
+      "name": "Iphone 15",
+      "price": 66666,
+      "category": "Mobile Phone",
+      "color": "Blue",
+      "description": "INNOVATIVE DESIGN — iPhone 15 features a durable color-infused glass and aluminum design. It’s splash, water, and dust resistant.",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRKj8NxFZGTq2Duw3kub7bAM6b-7zsd_1oF5GkGsknP4ex-A8Dk",
+      "id": 3
+    },
+    {
+      "name": "Iphone 16",
+      "price": 78999,
+      "category": "Mobile Phone",
+      "color": "Teal",
+      "description": "BUILT FOR APPLE INTELLIGENCE — Apple Intelligence is the personal intelligence system that helps you write, express yourself and get things done effortlessly. With groundbreaking privacy protections, it gives you peace of mind that no one else can access your data — not even Apple.",
+      "image": "https://m.media-amazon.com/images/I/71CSc3M2AGL._SL1500_.jpg",
+      "id": 4
+    }
+  ],
+  "cart": [
+    {
+      "name": "Iphone 13",
+      "price": 49999,
+      "category": "Mobile Phone",
+      "color": "white",
+      "description": "Cinematic mode adds shallow depth of field and shifts focus automatically in your videos",
+      "image": "https://m.media-amazon.com/images/I/71GLMJ7TQiL._SX679_.jpg",
+      "quantity": 2,
+      "productId": 1,
+      "userId": 1,
+      "id": 1
+    }
+  ],
+  "orders": []
+}

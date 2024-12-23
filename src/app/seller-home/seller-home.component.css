@@ -1,0 +1,101 @@
+.product-list h1{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+table {
+    width: 100%; /* Make the table take the full width of the container */
+    text-align: left;
+    color: #333; /* Softer text color for better readability */
+    border-collapse: collapse;
+    margin: 20px 0; /* Add spacing around the table */
+    font-family: 'Arial', sans-serif; /* Use a clean font */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure shadow is applied properly */
+}
+
+table thead {
+    background-color: #f4f4f4; /* Light background for the header */
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+table td, table th {
+    border: 1px solid #ddd; /* Softer border color */
+    padding: 15px; /* More padding for better spacing */
+    text-align: center; /* Center-align content */
+}
+
+table th {
+    background-color: #e9ecef; /* Highlighted header background */
+    color: #000; /* Darker text for headers */
+    text-transform: uppercase; /* Make headers stand out */
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row colors for better readability */
+}
+
+table tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+img {
+    height: 150px; /* Adjusted image height for better fit */
+    width: 150px; /* Adjusted image width */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 8px; /* Rounded corners for images */
+    border: 1px solid #ddd; /* Subtle border around images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add depth to images */
+}
+
+.adjust-update-link {
+    color: #007bff; /* Consistent link color */
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.adjust-update-link:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darker shade on hover */
+}
+
+.delete{
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.no-product {
+    display: flex;
+    flex-direction: column;     
+    justify-content: center;    
+    align-items: center;       
+    height: 10vh;              
+    text-align: center;  
+  }
+  
+  .message-p {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 20px;       
+  }
+  
+  .add-product-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;         
+    border-radius: 10px;
+  }
+  
+  .add-product-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  

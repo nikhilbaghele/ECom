@@ -1,0 +1,104 @@
+<div class="add-product">
+  <h1>Add New Product</h1>
+  <p class="message-p">{{ addProductMessage }}</p>
+  <form
+    #addProductForm="ngForm"
+    (ngSubmit)="submit(addProductForm.value)"
+    class="common-form"
+  >
+    <!-- Product Name -->
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Product Name"
+      name="name"
+      ngModel
+      required
+      minlength="3"
+      #name="ngModel"
+    />
+    <p class="invalid-input" *ngIf="name.invalid && name.touched">
+      Product name is required and must be at least 3 characters.
+    </p>
+
+    <!-- Product Price -->
+    <input
+      type="number"
+      class="form-input"
+      placeholder="Product Price"
+      name="price"
+      ngModel
+      required
+      min="1"
+      #price="ngModel"
+    />
+    <p class="invalid-input" *ngIf="price.invalid && price.touched">
+      Price is required and must be a positive number.
+    </p>
+
+    <!-- Product Category -->
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Product Category"
+      name="category"
+      ngModel
+      required
+      #category="ngModel"
+    />
+    <p class="invalid-input" *ngIf="category.invalid && category.touched">
+      Category is required.
+    </p>
+
+    <!-- Product Color -->
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Product Color"
+      name="color"
+      ngModel
+      required
+      #color="ngModel"
+    />
+    <p class="invalid-input" *ngIf="color.invalid && color.touched">
+      Color is required.
+    </p>
+
+    <!-- Product Description -->
+    <textarea
+      class="form-input"
+      placeholder="Product Description"
+      name="description"
+      ngModel
+      required
+      minlength="10"
+      #description="ngModel"
+    ></textarea>
+    <p class="invalid-input" *ngIf="description.invalid && description.touched">
+      Description is required and must be at least 10 characters.
+    </p>
+
+    <!-- Product Image URL -->
+    <input
+      type="url"
+      class="form-input"
+      placeholder="Product Image URL"
+      name="image"
+      ngModel
+      required
+      #image="ngModel"
+    />
+    <p class="invalid-input" *ngIf="image.invalid && image.touched">
+      Image URL is required and must be a valid URL.
+    </p>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="form-button"
+      [disabled]="addProductForm.invalid"
+    >
+      Add Product
+    </button>
+  </form>
+</div>
